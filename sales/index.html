@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales - PharmaCore System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">Pharmacy Management System</div>
+            <div class="user-status"></div>
+            <nav>
+                <a href="../dashboard/index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="../Medicin List/Index.html"><i class="fas fa-pills"></i> Medicines</a>
+                <a href="#" class="active"><i class="fas fa-dollar-sign"></i> Sales</a>
+                <a href="#"><i class="fas fa-chart-bar"></i> Reports</a>
+            </nav>
+            <a href="../login/index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </aside>
+
+        <main class="main-content">
+            <div class="header-white-bar">
+                <header class="top-nav" >
+                    <h1 class="page-title">Sales</h1>
+                    <input type="search" placeholder="Search" class="search-input"style="display: none;" >
+                </header>
+            </div>
+
+            <!-- Create New Order Section -->
+            <section class="form-container">
+                <div class="form-header">
+                    <h2>Create New Order</h2>
+                    <div id="successMessage" class="success-message">
+                        Item added to cart successfully!
+                    </div>
+                </div>
+                
+                <div class="form-body">
+                    <form class="form-fields" id="orderForm">
+                        <div class="form-group">
+                            <label for="medicineName">Medicine Name</label>
+                            <select id="medicineName" name="medicineName" required>
+                                <option value="">Select Medicine</option>
+                                <option value="Aspirin 500mg" data-price="10.00">Aspirin 500mg</option>
+                                <option value="Ibuprofen 200mg" data-price="12.00">Ibuprofen 200mg</option>
+                                <option value="Paracetamol 500mg" data-price="8.00">Paracetamol 500mg</option>
+                                <option value="Amoxicillin 500mg" data-price="15.00">Amoxicillin 500mg</option>
+                                <option value="Omeprazole 20mg" data-price="18.00">Omeprazole 20mg</option>
+                            </select>
+                        </div>
+                        <!-- ***** -->
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <select id="quantity" name="quantity" required>
+                                <option value="">Select Quantity</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+
+                        <div class="unit-price-display" id="unitPrice">
+                            Unit Price: $0.00
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Add to Cart</button>
+                            <button type="button" class="btn-secondary" onclick="resetForm()">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Order Summary Section -->
+            <section class="medicines-section">
+                <div class="medicines-card">
+                    <div class="medicines-top">
+                        <h2>Order Summary</h2>
+                        <div class="summary-actions">
+                            <button class="btn-secondary" onclick="clearCart()">Clear Cart</button>
+                            <button class="btn-primary" onclick="completeSale()">Complete Sale</button>
+                        </div>
+                    </div>
+
+                    <div class="medicines-table-wrap">
+                        <table class="medicines-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartTbody">
+                                <tr>
+                                    <td colspan="4" class="empty-cart">Cart is empty</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotalAmount">$0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax (8%):</span>
+                            <span id="taxAmount">$0.00</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total:</span>
+                            <span id="totalAmount">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

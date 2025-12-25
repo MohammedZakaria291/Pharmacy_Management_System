@@ -1,0 +1,61 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pharmacy Sales Receipt</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+
+    <div class="receipt-box">
+        <h1 class="main-title">PharmaCore System</h1>
+        <div class="date">2025-10-27</div>
+
+        <h2 class="receipt-title">SALES RECEIPT</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aspirin 500mg</td>
+                    <td>1</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>Ibuprofen 200mg</td>
+                    <td>2</td>
+                    <td>$12.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-section">
+            <div class="summary-row subtotal-row">
+                <span>Subtotal</span>
+                <span>$22.00</span>
+            </div>
+       <div class="summary-row tax-row">
+                <span>Tax (8%)</span>
+                <span>$1.76</span>
+            </div>
+
+            <div class="summary-row total-row">
+                <span>Total: $23.76</span>
+            </div>
+        </div>
+
+        <p class="thank-you">Thank you for your purchase!</p>
+
+        <button class="print-button" onclick="window.print()">Print</button>
+    </div>
+
+</body>
+</html>     

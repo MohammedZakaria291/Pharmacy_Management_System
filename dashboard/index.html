@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCore System - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./add medicine/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">Pharmacy Management System</div>
+            <!-- <div class="user-status">Pharmacy Management System</div> -->
+            
+            <nav>
+                <a href="index.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="../Medicin List/Index.html"><i class="fas fa-pills"></i> Medicines</a>
+                <a href="../sales/index.html"><i class="fas fa-dollar-sign"></i> Sales</a>
+                <a href="#"><i class="fas fa-chart-bar"></i> Reports</a>
+            </nav>
+            <a href="../login/index.html" class="logout" style="text-decoration: none;color: white; text-align: left;padding-left: 2; margin-left: 5;">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+       
+            <div class="header-white-bar">
+                <header class="top-nav">
+                    <h1 class="page-title">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </h1>
+                    <div class="search-group">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search for medicine or sales..." class="search-input">
+                        </div>
+                        <div class="icons">
+                            <div class="notification">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge">3</span>
+                            </div>
+                            <div class="profile">
+                                <div class="profile-img">AS</div>
+                                <div>
+                                    <div class="username">Abdullah saleh</div>
+                                    <div class="role">System Administrator</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <!-- Stats Cards -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-pills stat-icon blue"></i>
+                    <h3>Total Medicines</h3>
+                    <div class="stat-number" id="totalMedicines">0</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-times stat-icon red"></i>
+                    <h3>Expired or Near Expiry</h3>
+                    <div class="stat-number" id="expiredCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-exclamation-triangle stat-icon orange"></i>
+                    <h3>Low Stock Alerts</h3>
+                    <div class="stat-number" id="lowStockCount">0 Items</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-dollar-sign stat-icon green"></i>
+                    <h3>Total Sales</h3>
+                    <div class="stat-number" id="totalSales">0</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Recent Sales Table -->
+        <div class="recent-sales-card">
+            <div class="card-header">
+                <h3>Recent Sales</h3>
+                <a href="#">View All</a>
+            </div>
+            <table class="sales-table">
+                <thead>
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Items</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="sales-tbody">
+                    <!-- Rows will be added by JS -->
+                </tbody>
+            </table>
+        </div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

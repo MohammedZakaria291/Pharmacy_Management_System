@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicines - PharmaCore System</title>
+    <link rel="stylesheet" href="../add medicine/style.css">
+
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">PharmaCore System</div>
+            <div class="user-status">Pharmacy Management System</div>
+            
+            <nav>
+                <a href="../index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="#" class="active"><i class="fas fa-pills"></i> Medicines</a>
+                <a href="../sales/index.html"><i class="fas fa-dollar-sign"></i> Sales</a>
+                <a href="../reports/index.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            </nav>
+            <a href="../login/index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </aside>
+
+        <main class="main-content">
+            <div class="header-white-bar">
+                <header class="top-nav">
+                    <h1 class="page-title"><i class="fas fa-pills"></i> Medicines List</h1>
+                    <div class="search-group">
+                        <input type="search" placeholder="Search" class="search-input">
+                        <div class="icons">
+                            <div class="notification">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge">3</span>
+                            </div>
+                            <div class="profile">
+                                <div class="profile-img">MA</div>
+                                <div>
+                                    <div class="username">Mohammed Ahmed</div>
+                                    <div class="role">System Administrator</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <section class="form-container">
+                <div class="form-header">
+                    <h2>Add / Update Medicine</h2>
+                    <div id="successMessage" class="success-message"></div>
+                </div>
+                
+                <div class="form-body">
+                    <form class="form-fields" id="medicineForm">
+                        <input type="hidden" id="medicineId" name="medicineId" value="">
+                        <div class="form-group">
+                            <label for="medicineName">Medicine Name</label>
+                            <input id="medicineName" type="text" name="medicineName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <input id="category" type="text" name="category" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input id="price" type="number" step="0.01" name="price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input id="quantity" type="number" name="quantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input id="expiryDate" type="date" name="expiryDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="supplier">Supplier</label>
+                            <input id="supplier" type="text" name="supplier" required>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save Medicine</button>
+                            <button type="button" class="btn-secondary" onclick="clearForm()">Cancel</button>
+                            <div id="validation-error-message" class="error-message"></div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="medicines-section">
+                <div class="medicines-card">
+                    <div class="medicines-top">
+                        <div class="medicines-search">
+                            <input type="search" placeholder="Search medicines..." class="search-input small">
+                            <a class="filter-link" href="#">Filter</a>
+                        </div>
+                        <button class="btn-primary add-btn">Add New Medicine</button>
+                    </div>
+
+                    <div class="medicines-table-wrap">
+                        <table class="medicines-table">
+                            <thead>
+                                <tr>
+                                    <th>Medicine Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Expiry Date</th>
+                                    <th>Supplier</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="medicinesTbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
